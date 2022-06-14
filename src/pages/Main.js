@@ -67,10 +67,9 @@ const Main = () => {
                         alignItems: 'center',
                     }}
                 >
-                    <Box>
+                    {/*<Box>*/}
                         <img src="/lg.png" alt="logo"/>
-                        <img src="/info.jpg" alt="logo"/>
-                    </Box>
+                    {/*</Box>*/}
                     <Box component="form" noValidate onSubmit={handleSubmit} sx={{mt: 3}}>
                         <Grid container spacing={2}>
                             <Grid item xs={12}>
@@ -103,7 +102,10 @@ const Main = () => {
                         </Button>
 
                     </Box>
+                    <img src="/info.png" alt="logo"/>
+
                 </Box>
+
                 <Copyright sx={{mt: 5}}/>
             </Container>
         </ThemeProvider>
