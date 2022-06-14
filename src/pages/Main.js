@@ -57,7 +57,7 @@ const Main = () => {
 
     return (
         <ThemeProvider theme={theme}>
-            <Container component="main" maxWidth="xs">
+            <Container component="main" maxWidth="l">
                 <CssBaseline/>
                 <Box
                     sx={{
@@ -67,9 +67,10 @@ const Main = () => {
                         alignItems: 'center',
                     }}
                 >
-
-                    <img src="/lg.png" alt="logo"/>
-
+                    <Box>
+                        <img src="/lg.png" alt="logo"/>
+                        <img src="/info.jpg" alt="logo"/>
+                    </Box>
                     <Box component="form" noValidate onSubmit={handleSubmit} sx={{mt: 3}}>
                         <Grid container spacing={2}>
                             <Grid item xs={12}>
