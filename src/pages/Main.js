@@ -57,18 +57,19 @@ const Main = () => {
 
     return (
         <ThemeProvider theme={theme}>
-            <Container component="main" maxWidth="l">
+            <Container component="main" maxWidth="xs">
                 <CssBaseline/>
                 <Box
                     sx={{
-                        marginTop: 8,
+                        marginTop: 4,
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',
                     }}
                 >
                     {/*<Box>*/}
-                        <img src="/lg.png" alt="logo"/>
+                         <img src="/info.jpg" alt="logo"/>
+
                     {/*</Box>*/}
                     <Box component="form" noValidate onSubmit={handleSubmit} sx={{mt: 3}}>
                         <Grid container spacing={2}>
@@ -102,7 +103,6 @@ const Main = () => {
                         </Button>
 
                     </Box>
-                    <img src="/info.png" alt="logo"/>
 
                 </Box>
 
