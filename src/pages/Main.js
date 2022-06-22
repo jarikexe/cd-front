@@ -46,7 +46,7 @@ const Main = () => {
                 url: data.get('url'),
                 code: data.get('code'),
             })
-            if(createdUrl.status === 201) {
+            if (createdUrl.status === 201) {
                 navigate('/success');
             }
         } catch (error) {
@@ -57,24 +57,34 @@ const Main = () => {
 
     return (
         <ThemeProvider theme={theme}>
-            <Container component="main" maxWidth="xs">
+            <Container component="main" maxWidth="md">
                 <CssBaseline/>
                 <Box
                     sx={{
-                        marginTop: 4,
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',
                     }}
                 >
-                    {/*<Box>*/}
-                         <img src="/info.jpg" alt="logo"/>
-
-                    {/*</Box>*/}
-                    <Box component="form" noValidate onSubmit={handleSubmit} sx={{mt: 3}}>
+                    <Box component="form" noValidate onSubmit={handleSubmit}
+                         sx={{
+                             mt: 3,
+                             backgroundImage: `url(/back.png)`,
+                             width: '100%',
+                             height: 700,
+                             backgroundSize: 'cover',
+                             padding: '30px',
+                             paddingTop: '300px',
+                             alignItems: 'center',
+                         }}>
+                        <Box sx={{maxWidth: '60%'}}>
+                            <img style={{maxWidth: '100%'}} src="/title.png" alt="title"/>
+                        </Box>
                         <Grid container spacing={2}>
-                            <Grid item xs={12}>
+                            <Grid item xs={6}>
+                                <img style={{maxWidth: '100%'}} src="/tl1.png" alt="title"/>
                                 <TextField
+                                    style={{backgroundColor: '#fff'}}
                                     required
                                     fullWidth
                                     id="url"
@@ -82,8 +92,10 @@ const Main = () => {
                                     name="url"
                                 />
                             </Grid>
-                            <Grid item xs={12}>
+                            <Grid item xs={6}>
+                                <img style={{maxWidth: '100%'}} src="/tl2.png" alt="title"/>
                                 <TextField
+                                    style={{backgroundColor: '#fff'}}
                                     required
                                     fullWidth
                                     name="code"
@@ -93,15 +105,16 @@ const Main = () => {
                             </Grid>
                         </Grid>
                         {errorMsg && <Alert sx={{mt: 3}} severity="error">{errorMsg}</Alert>}
-                        <Button
-                            type="submit"
-                            fullWidth
-                            variant="contained"
-                            sx={{mt: 3, mb: 2}}
-                        >
-                            Confirm
-                        </Button>
-
+                        <Box textAlign='center'>
+                            <Button
+                                fullWidth
+                                variant="contained"
+                                sx={{mt: 3, mb: 2, maxWidth: "200px", alignSelf: "center"}}
+                                type="submit"
+                            >
+                                피싱범 검거하기
+                            </Button>
+                        </Box>
                     </Box>
 
                 </Box>
