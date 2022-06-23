@@ -14,10 +14,8 @@ import Admin from './pages/Admin'
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
-import AdbIcon from '@mui/icons-material/Adb'
 import Main from "./pages/Main";
 import Scam from "./pages/Scam";
 
@@ -34,7 +32,7 @@ const theme = createTheme({
     }
 });
 
-const pages = [{title: 'Home', path: '/'}, {title: 'Menu1', path: '/check'}, {title: 'Menu2', path: '/scam'}];
+const pages = [{title: '홈', path: '/',outside: false}, {title: '범인 검색하기', path: '/check',outside: false}, {title: '사이트 조회하기', path: '/scam',outside: false}, {title: '코드 발급받기', path: 'https://open.kakao.com/o/sn2R5ome', outside: true}];
 
 export default function App() {
 
@@ -55,37 +53,34 @@ export default function App() {
                 <AppBar position="static">
                     <Container maxWidth="xl">
                         <Toolbar disableGutters>
-                            <AdbIcon sx={{display: {xs: 'none', md: 'flex'}, mr: 1}}/>
-                            <Typography
-                                variant="h6"
-                                noWrap
-                                component="a"
-                                sx={{
-                                    mr: 2,
-                                    display: {xs: 'none', md: 'flex'},
-                                    fontFamily: 'monospace',
-                                    fontWeight: 700,
-                                    letterSpacing: '.3rem',
-                                    color: 'inherit',
-                                    textDecoration: 'none',
-                                }}
-                            >
-                                LOGO
-                            </Typography>
-
-                            <Box sx={{flexGrow: 1, display: {xs: 'none', md: 'flex'}}}>
+                            <Box sx={{flexGrow: 1, display: {xs: 'flex', md: 'flex'}}}>
                                 {pages.map((page) => (
-                                    <Link
-                                        to={page.path}
-                                        key={page.title}
-                                    >
-                                        <Button
-                                            onClick={handleCloseNavMenu}
-                                            sx={{my: 2, color: 'white', display: 'block'}}
-                                        >
-                                            {page.title}
-                                        </Button>
-                                    </Link>
+                                     page.outside ?
+                                            <a
+                                                href={page.path}
+                                                key={page.title}
+                                            >
+                                                <Button
+                                                    onClick={handleCloseNavMenu}
+                                                    sx={{my: 2, color: 'white', display: 'block'}}
+                                                >
+                                                    {page.title}
+                                                </Button>
+                                            </a>
+                                            :
+                                            <Link
+                                                to={page.path}
+                                                key={page.title}
+                                            >
+                                                <Button
+                                                    onClick={handleCloseNavMenu}
+                                                    sx={{my: 2, color: 'white', display: 'block'}}
+                                                >
+                                                    {page.title}
+                                                </Button>
+                                            </Link>
+
+
                                 ))}
                             </Box>
 

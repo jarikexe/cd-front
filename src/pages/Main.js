@@ -71,18 +71,24 @@ const Main = () => {
                              mt: 3,
                              backgroundImage: `url(/back.png)`,
                              width: '100%',
+                             backgroundPosition: 'top right',
                              height: 700,
-                             backgroundSize: 'cover',
                              padding: '30px',
                              paddingTop: '300px',
                              alignItems: 'center',
-                         }}>
+                         }}
+                         sm={{
+                             backgroundSize: 'cover',
+
+                         }}
+                    >
                         <Box sx={{maxWidth: '60%'}}>
                             <img style={{maxWidth: '100%'}} src="/title.png" alt="title"/>
                         </Box>
                         <Grid container spacing={2}>
-                            <Grid item xs={6}>
-                                <img style={{maxWidth: '100%'}} src="/tl1.png" alt="title"/>
+                            <Grid item sx={12} sm={6}>
+                                <img style={{maxWidth: '100%', height: "40px", width: 'auto'}} src="/tl1.png"
+                                     alt="title"/>
                                 <TextField
                                     style={{backgroundColor: '#fff'}}
                                     required
@@ -92,8 +98,9 @@ const Main = () => {
                                     name="url"
                                 />
                             </Grid>
-                            <Grid item xs={6}>
-                                <img style={{maxWidth: '100%'}} src="/tl2.png" alt="title"/>
+                            <Grid item sx={12} sm={6}>
+                                <img style={{maxWidth: '100%', height: "40px", width: 'auto'}} src="/tl2.png"
+                                     alt="title"/>
                                 <TextField
                                     style={{backgroundColor: '#fff'}}
                                     required

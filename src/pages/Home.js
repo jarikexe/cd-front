@@ -6,15 +6,15 @@ import {
 const Home = () => {
 
     return (
-        <Container component="main" maxWidth="xs" sx={{
+        <Container component="main" maxWidth="m" sx={{
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
         }}>
             <Link to='/check'>
-                <img src="/home1.jpg" alt="home img"/>
+                <img style={{maxWidth: '100%'}} src="/home1.jpg" alt="home img"/>
             </Link>
-            <img src="/home2.jpg" alt="secound home img"/>
+            <img style={{maxWidth: '100%'}} src="/home2.jpg" alt="secound home img"/>
         </Container>
     );
 }
