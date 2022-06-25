@@ -104,7 +104,7 @@ const Main = () => {
                                 sx={{mt: 3, mb: 2, maxWidth: "200px", alignSelf: "center"}}
                                 type="submit"
                             >
-                                피싱범 검거하기
+                                CONFIRM
                             </Button>
                         </Box>
                     </Box>
