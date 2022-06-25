@@ -32,7 +32,7 @@ const theme = createTheme({
     }
 });
 
-const pages = [{title: '홈', path: '/',outside: false}, {title: 'menu 1', path: '/page1',outside: false}, {title: 'menu2', path: '/page2',outside: false}];
+const pages = [{title: '홈', path: '/',outside: false}, {title: '네이버조회수 검색', path: '/page1',outside: false}, {title: '네이버쇼핑순위 검색', path: '/page2',outside: false}];
 
 export default function App() {
 
