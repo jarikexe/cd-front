@@ -7,7 +7,6 @@ import {
 } from "react-router-dom";
 
 import {createTheme, ThemeProvider} from '@mui/material/styles';
-import Home from './pages/Home'
 import Success from './pages/Success'
 import Login from './pages/Login'
 import Admin from './pages/Admin'
@@ -17,22 +16,23 @@ import Toolbar from '@mui/material/Toolbar';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import Main from "./pages/Main";
-import Scam from "./pages/Scam";
+import Page1 from "./pages/Page1";
+import Page2 from "./pages/Page2";
 
 
 const theme = createTheme({
     palette: {
         type: 'light',
         primary: {
-            main: '#000',
+            main: '#01C73C',
         },
         secondary: {
-            main: '#c2c2c2',
+            main: '#f50057',
         },
     }
 });
 
-const pages = [{title: '홈', path: '/',outside: false}, {title: '범인 검색하기', path: '/check',outside: false}, {title: '사이트 조회하기', path: '/scam',outside: false}, {title: '코드 발급받기', path: 'https://open.kakao.com/o/sn2R5ome', outside: true}];
+const pages = [{title: '홈', path: '/',outside: false}, {title: 'menu 1', path: '/page1',outside: false}, {title: 'menu2', path: '/page2',outside: false}];
 
 export default function App() {
 
@@ -88,10 +88,10 @@ export default function App() {
                     </Container>
                 </AppBar>
                 <Routes>
-                    <Route path="/" element={<Home/>}/>
+                    <Route path="/" element={<Main/>}/>
                     <Route path="/success" element={<Success/>}/>
-                    <Route path="/check" element={<Main/>}/>
-                    <Route path="/scam" element={<Scam/>}/>
+                    <Route path="/page1" element={<Page1/>}/>
+                    <Route path="/page2" element={<Page2/>}/>
                     <Route path="/admin" element={<Login/>}/>
                     <Route path="/admin/dashboard" element={<Admin/>}/>
                 </Routes>

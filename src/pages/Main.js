@@ -2,7 +2,6 @@ import {useState} from 'react';
 import axios from 'axios';
 import Button from '@mui/material/Button';
 import {useNavigate} from "react-router-dom";
-import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import Alert from '@mui/material/Alert';
 import Grid from '@mui/material/Grid';
@@ -57,8 +56,8 @@ const Main = () => {
 
     return (
         <ThemeProvider theme={theme}>
-            <Container component="main" maxWidth="md">
-                <CssBaseline/>
+            <Container sx={{mt: 2}} component="main" maxWidth="md">
+                <img style={{maxWidth: '100%'}} src="/info.jpg" alt="info"/>
                 <Box
                     sx={{
                         display: 'flex',
@@ -69,26 +68,14 @@ const Main = () => {
                     <Box component="form" noValidate onSubmit={handleSubmit}
                          sx={{
                              mt: 3,
-                             backgroundImage: `url(/back.png)`,
-                             width: '100%',
-                             backgroundPosition: 'top right',
-                             height: 700,
-                             padding: '30px',
-                             paddingTop: '300px',
                              alignItems: 'center',
                          }}
                          sm={{
                              backgroundSize: 'cover',
-
                          }}
                     >
-                        <Box sx={{maxWidth: '60%'}}>
-                            <img style={{maxWidth: '100%'}} src="/title.png" alt="title"/>
-                        </Box>
                         <Grid container spacing={2}>
-                            <Grid item sx={12} sm={6}>
-                                <img style={{maxWidth: '100%', height: "40px", width: 'auto'}} src="/tl1.png"
-                                     alt="title"/>
+                            <Grid item xs={12} >
                                 <TextField
                                     style={{backgroundColor: '#fff'}}
                                     required
@@ -98,9 +85,7 @@ const Main = () => {
                                     name="url"
                                 />
                             </Grid>
-                            <Grid item sx={12} sm={6}>
-                                <img style={{maxWidth: '100%', height: "40px", width: 'auto'}} src="/tl2.png"
-                                     alt="title"/>
+                            <Grid item xs={12} >
                                 <TextField
                                     style={{backgroundColor: '#fff'}}
                                     required
